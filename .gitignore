@@ -1,0 +1,42 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Data & Model Artifacts (never commit large data/weights)
+data/raw/*
+!data/raw/.gitkeep
+data/reference/*
+!data/reference/.gitkeep
+models/*.pkl
+models/*.joblib
+models/*.onnx
+
+# MLflow tracking local store
+mlruns/
+.trash/
+
+# Monitoring / Evidently HTML outputs
+*.html
+reports/
+
+# Testing & Coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDE & OS specific
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment variables & secrets
+.env
+*.local

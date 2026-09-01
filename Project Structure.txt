@@ -1,0 +1,41 @@
+fraud-detection-mlops/
+├── .github/
+│   └── workflows/
+│       └── ci.yml               # Runs automated tests & linting on every push/PR
+├── configs/
+│   ├── train_config.yaml        # Model hyperparameters, feature lists, thresholds
+│   └── service_config.yaml      # API settings, host/port, timeout, logging config
+├── data/
+│   ├── raw/                     # Initial raw data / baseline datasets (git-ignored)
+│   └── reference/               # Benchmark data used for baseline drift detection
+├── src/                         # Core Python package (modular & importable)
+│   ├── __init__.py
+│   ├── data/
+│   │   ├── __init__.py
+│   │   ├── schemas.py           # Pydantic models for request/data validation
+│   │   └── generator.py         # Synthetic data & drift simulation generator
+│   ├── features/
+│   │   ├── __init__.py
+│   │   └── pipeline.py          # Scikit-learn feature transformation pipeline
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── train.py             # Training loop + MLflow tracking
+│   │   └── evaluate.py          # Cost-sensitive metrics (PR-AUC, F1, cost curve)
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── app.py               # FastAPI application setup & lifecycle
+│   │   └── routes.py            # Endpoints: /health, /predict, /batch_predict
+│   └── monitoring/
+│       ├── __init__.py
+│       └── drift.py             # Evidently AI drift detection & report generator
+├── tests/                       # Unit and integration test suite
+│   ├── __init__.py
+│   ├── test_data.py             # Tests data validation & schema rules
+│   ├── test_features.py         # Tests feature preprocessing logic
+│   ├── test_model.py            # Tests model prediction shapes & outputs
+│   └── test_api.py              # Tests API status codes and response schemas
+├── .gitignore                   # Ignore .venv, __pycache__, logs, large data
+├── Dockerfile                   # Production container definition
+├── docker-compose.yml           # Runs API + MLflow UI + Monitoring dashboard
+├── pyproject.toml               # Python dependencies and tool configs (ruff, pytest)
+└── README.md                    # Project documentation, architecture & benchmarks
