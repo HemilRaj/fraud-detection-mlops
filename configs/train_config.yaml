@@ -1,0 +1,18 @@
+experiment_name: "fraud_detection_model"
+tracking_uri: "sqlite:///mlflow.db"
+random_state: 42
+
+data:
+  n_samples: 20000
+  fraud_ratio: 0.02
+  test_size: 0.2
+  reference_data_path: "data/reference/baseline_reference.parquet"
+
+model:
+  n_estimators: 150
+  learning_rate: 0.05
+  num_leaves: 31
+  max_depth: 6
+  scale_pos_weight: 15.0 # Weight for minority fraud class
+  decision_threshold: 0.45 # Custom decision threshold for fraud
+  output_model_path: "models/fraud_pipeline.joblib"

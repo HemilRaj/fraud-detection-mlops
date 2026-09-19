@@ -1,0 +1,23 @@
+Metadata-Version: 2.4
+Name: fraud-detection-mlops
+Version: 0.1.0
+Summary: Production-grade Real-Time Fraud Detection & MLOps Pipeline
+Author-email: Hemil Makwana <hemilmakwana1@gmail.com>
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.24.0
+Requires-Dist: pandas>=2.0.0
+Requires-Dist: scikit-learn>=1.3.0
+Requires-Dist: lightgbm>=4.0.0
+Requires-Dist: joblib>=1.3.0
+Requires-Dist: pydantic>=2.5.0
+Requires-Dist: pyyaml>=6.0.0
+Requires-Dist: fastapi>=0.109.0
+Requires-Dist: uvicorn[standard]>=0.27.0
+Requires-Dist: httpx>=0.26.0
+Requires-Dist: mlflow>=2.10.0
+Requires-Dist: evidently>=0.4.15
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0.0; extra == "dev"
+Requires-Dist: pytest-cov>=4.1.0; extra == "dev"
+Requires-Dist: ruff>=0.2.0; extra == "dev"
