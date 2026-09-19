@@ -1,0 +1,15 @@
+service:
+  title: "Real-Time Fraud Detection API"
+  version: "1.0.0"
+  description: "Low-latency inference service with automated data validation and drift logging"
+  host: "0.0.0.0"
+  port: 8000
+
+model:
+  model_path: "models/fraud_pipeline.joblib"
+  decision_threshold: 0.45
+  model_version: "v1.0.0-lgbm"
+
+monitoring:
+  log_predictions: true
+  prediction_log_path: "data/prediction_logs.csv"

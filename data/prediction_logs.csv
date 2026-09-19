@@ -1,0 +1,2 @@
+transaction_id,user_id,amount,merchant_category,device_type,is_foreign_transaction,hour_of_day,distance_from_home_km,velocity_last_24h,fraud_probability,timestamp
+tx_test_001,usr_999,450.0,electronics,mobile,1,3,85.0,7,0.9995533444113632,1789805659.5630984
